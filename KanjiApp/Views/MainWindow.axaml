@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:KanjiApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="KanjiApp.Views.MainWindow"
+        Icon="/Assets/AppIcon.png"
+        Title="KanjiApp"
+        Background="#E5E5E5">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+        <Grid Grid.Row="0"
+              RowDefinitions="Auto,Auto"
+              ColumnDefinitions="*,*">
+            <TextBlock>Level:</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0">N4</TextBlock>
+            <Button Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right">Settings</Button>
+        </Grid>
+        
+        <Ellipse Grid.Row="1"
+                 Fill="#FF9494"
+                 Height="300"
+                 Width="300" />
+        
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">知識</TextBlock>
+
+        <TextBlock Grid.Row="2" HorizontalAlignment="Center">Choose what you want to practice:</TextBlock>
+        
+        <Button Grid.Row="3" HorizontalAlignment="Center">Simple practice</Button>
+        <Button Grid.Row="4" HorizontalAlignment="Center">Take exam</Button>
+        
+        <Button Grid.Row="5" HorizontalAlignment="Center">Start!</Button>
+        <Button Grid.Row="6" HorizontalAlignment="Center">Kanji glossary</Button>
+    </Grid>
+
+</Window>
