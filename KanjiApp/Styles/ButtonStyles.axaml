@@ -1,0 +1,40 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <StackPanel Orientation="Vertical">
+                <Button Classes="BlueButton Capsule" Width="250">Text</Button>
+                <Button Classes="PinkButton Capsule" Width="250">Text</Button>
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <Style Selector="Button.Capsule">
+        <Setter Property="CornerRadius" Value="50" />
+    </Style>
+
+    <Style Selector="Button.BlueButton">
+        <Setter Property="Background" Value="{StaticResource LightBlue}" />
+        <Setter Property="Foreground" Value="{StaticResource White}" />
+    </Style>
+    <Style Selector="Button.BlueButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource MidBlue}" />
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource White}" />
+    </Style>
+    <Style Selector="Button.BlueButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource DeepBlue}" />
+    </Style>
+
+    <Style Selector="Button.PinkButton">
+        <Setter Property="Background" Value="{StaticResource LightPink}" />
+        <Setter Property="Foreground" Value="{StaticResource White}" />
+    </Style>
+    <Style Selector="Button.PinkButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource MidPink}" />
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource White}" />
+    </Style>
+    <Style Selector="Button.PinkButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource DarkPink}" />
+    </Style>
+
+</Styles>

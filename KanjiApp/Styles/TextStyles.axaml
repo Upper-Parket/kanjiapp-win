@@ -1,0 +1,30 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <StackPanel>
+                <TextBlock Classes="CircleKanji">知識</TextBlock>
+                <TextBlock VerticalAlignment="Center">CircleKanji</TextBlock>
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+    
+    <Style Selector="TextBlock.CircleKanji">
+        <Setter Property="FontFamily" Value="M PLUS 1p" />
+        <Setter Property="FontWeight" Value="500" />
+        <Setter Property="FontSize" Value="64" />
+        <Setter Property="Foreground" Value="{StaticResource Black}" />
+    </Style>
+    
+    <Style Selector="TextBlock.BigButtonText">
+        <Setter Property="FontWeight" Value="600" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontFamily" Value="M PLUS 1p" />
+        <Setter Property="Padding" Value="10" />
+    </Style>
+    
+    <Style Selector="TextBlock.HorizontalCenter">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+</Styles>

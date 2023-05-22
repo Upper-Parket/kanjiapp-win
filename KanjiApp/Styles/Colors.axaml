@@ -1,0 +1,72 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Height="20" Width="20" Fill="{StaticResource Background}" />
+                    <TextBlock>Background</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Height="20" Width="20" Fill="{StaticResource Black}" />
+                    <TextBlock>Black</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Height="20" Width="20" Fill="{StaticResource White}" />
+                    <TextBlock>White</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Height="20" Width="20" Fill="{StaticResource LightPink}" />
+                    <TextBlock>LightPink</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Height="20" Width="20" Fill="{StaticResource MidPink}" />
+                    <TextBlock>MidPink</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Height="20" Width="20" Fill="{StaticResource DarkPink}" />
+                    <TextBlock>DarkPink</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Height="20" Width="20" Fill="{StaticResource LightBlue}" />
+                    <TextBlock>LightBlue</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Height="20" Width="20" Fill="{StaticResource MidBlue}" />
+                    <TextBlock>MidBlue</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Height="20" Width="20" Fill="{StaticResource DeepBlue}" />
+                    <TextBlock>DeepBlue</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Height="20" Width="20" Fill="{StaticResource Green}" />
+                    <TextBlock>Green</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Height="20" Width="20" Fill="{StaticResource Red}" />
+                    <TextBlock>Red</TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <Style>
+        <Style.Resources>
+            <Brush x:Key="Background">#E5E5E5</Brush>
+            <Brush x:Key="Black">#181818</Brush>
+            <Brush x:Key="White">#FFFEFB</Brush>
+
+            <Brush x:Key="LightPink">#FF9494</Brush>
+            <Brush x:Key="MidPink">#D86C80</Brush>
+            <Brush x:Key="DarkPink">#B1446B</Brush>
+
+            <Brush x:Key="LightBlue">#94ABFF</Brush>
+            <Brush x:Key="MidBlue">#6C84D8</Brush>
+            <Brush x:Key="DeepBlue">#445CB1</Brush>
+
+            <Brush x:Key="Green">#94FFB2</Brush>
+            <Brush x:Key="Red">#BC022A</Brush>
+        </Style.Resources>
+    </Style>
+</Styles>
