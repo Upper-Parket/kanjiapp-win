@@ -7,6 +7,10 @@
                     <TextBlock Classes="CircleKanji">知識</TextBlock>
                     <TextBlock VerticalAlignment="Center">CircleKanji</TextBlock>
                 </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Classes="GlossaryKanji">知識</TextBlock>
+                    <TextBlock VerticalAlignment="Center">Glossary kanji</TextBlock>
+                </StackPanel>
             </StackPanel>
         </Border>
     </Design.PreviewWith>
@@ -22,11 +26,23 @@
         <Setter Property="FontWeight" Value="600" />
         <Setter Property="FontSize" Value="18" />
         <Setter Property="FontFamily" Value="M PLUS 1p" />
-        <!-- <Setter Property="Padding" Value="10" /> -->
     </Style>
 
     <Style Selector="TextBlock.HorizontalCenter">
         <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+
+    <Style Selector="TextBlock.GlossaryKanji">
+        <Setter Property="FontWeight" Value="500" />
+        <Setter Property="FontSize" Value="36" />
+        <Setter Property="FontFamily" Value="M PLUS 1p" />
+    </Style>
+    
+    <Style Selector="TextBlock.GlossaryReading">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="FontWeight" Value="500" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="M PLUS 1p" />
     </Style>
 
 </Styles>

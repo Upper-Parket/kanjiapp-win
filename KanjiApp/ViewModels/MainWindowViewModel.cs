@@ -1,10 +1,12 @@
-﻿using ReactiveUI;
+﻿using KanjiApp.Utils;
+using ReactiveUI;
 
 namespace KanjiApp.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
+    public class MainWindowViewModel : ViewModelBase, INavigator
     {
         private ViewModelBase _content;
+        private readonly ViewModelBase _mainView;
 
         public ViewModelBase Content
         {
@@ -14,7 +16,18 @@ namespace KanjiApp.ViewModels
 
         public MainWindowViewModel()
         {
-            Content = new MainPageViewModel();
+            _mainView = new MainPageViewModel(this);
+            Content = _mainView;
+        }
+
+        public void PresentView(ViewModelBase viewModelBase)
+        {
+            Content = viewModelBase;
+        }
+
+        public void OpenMainView()
+        {
+            Content = _mainView;
         }
     }
 }

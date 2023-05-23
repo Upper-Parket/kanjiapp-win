@@ -1,0 +1,54 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:KanjiApp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="200"
+             x:Class="KanjiApp.Views.KanjiView">
+
+    <Design.DataContext>
+        <vm:KanjiViewModel />
+    </Design.DataContext>
+
+    <Border Background="Transparent"
+            BorderThickness="4"
+            BorderBrush="{StaticResource Green}"
+            Height="110"
+            Width="220"
+            CornerRadius="5" 
+            Margin="8">
+        <Grid ColumnDefinitions="Auto,Auto,*">
+
+            <TextBlock Grid.Column="0"
+                       VerticalAlignment="Center"
+                       Margin="10"
+                       Classes="GlossaryKanji"
+                       Text="{Binding Kanji}" />
+
+            <Rectangle Grid.Column="1"
+                       Width="1"
+                       Height="60"
+                       StrokeThickness="2"
+                       Stroke="{StaticResource Black}" />
+
+            <Grid Grid.Column="2"
+                  RowDefinitions="*,*,Auto"
+                  ColumnDefinitions="*"
+                  VerticalAlignment="Center"
+                  Margin="10">
+                <TextBlock Grid.Row="0"
+                           Margin="0 0 0 3"
+                           Classes="GlossaryReading"
+                           Text="{Binding Ons}" />
+                <TextBlock Grid.Row="1"
+                           Margin="0 0 0 3"
+                           Classes="GlossaryReading"
+                           Text="{Binding Kuns}" />
+                <TextBlock Grid.Row="2"
+                           Classes="GlossaryReading"
+                           Foreground="{StaticResource Gray}"
+                           Text="{Binding Translations}" />
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

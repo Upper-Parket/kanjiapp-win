@@ -8,9 +8,10 @@
         Icon="/Assets/AppIcon.png"
         Title="Kanji App"
         Background="{StaticResource White}"
-        Width="400"
+        Width="500"
         Height="400"
-        CanResize="False">
+        CanResize="False"
+        >
 
     <Design.DataContext>
         <vm:MainWindowViewModel />

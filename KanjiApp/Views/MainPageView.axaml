@@ -42,7 +42,8 @@
                 HorizontalAlignment="Center"
                 Width="200"
                 Margin="0 0 0 5"
-                Classes="BlueButton Capsule">
+                Classes="BlueButton Capsule"
+                Command="{Binding OpenGlossary}">
             <TextBlock Classes="HorizontalCenter BigButtonText">Glossary</TextBlock>
         </Button>
 
