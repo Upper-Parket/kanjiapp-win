@@ -3,8 +3,9 @@
     <Design.PreviewWith>
         <Border Padding="20">
             <StackPanel Orientation="Vertical">
-                <Button Classes="BlueButton Capsule" Width="250">Text</Button>
-                <Button Classes="PinkButton Capsule" Width="250">Text</Button>
+                <Button Classes="BlueButton Capsule" Width="250" Margin="5">Text</Button>
+                <Button Classes="PinkButton Capsule" Width="250" Margin="5">Text</Button>
+                <Button Classes="BlueOutlineButton Capsule" Width="250" Margin="5">Blue outline</Button>
             </StackPanel>
         </Border>
     </Design.PreviewWith>
@@ -35,6 +36,23 @@
     </Style>
     <Style Selector="Button.PinkButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="{StaticResource DarkPink}" />
+    </Style>
+
+    <Style Selector="Button.BlueOutlineButton">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{StaticResource LightBlue}" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource LightBlue}" />
+    </Style>
+    <Style Selector="Button.BlueOutlineButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{StaticResource MidBlue}" />
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource MidBlue}" />
+    </Style>
+    <Style Selector="Button.BlueOutlineButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{StaticResource DeepBlue}" />
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource DeepBlue}" />
     </Style>
 
 </Styles>

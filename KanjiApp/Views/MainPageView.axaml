@@ -5,16 +5,16 @@
              xmlns:vm="clr-namespace:KanjiApp.ViewModels"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
              x:Class="KanjiApp.Views.MainPageView">
-    
+
     <Design.DataContext>
         <vm:MainPageViewModel />
     </Design.DataContext>
-    
+
     <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
         <Grid Grid.Row="0"
               RowDefinitions="Auto,Auto"
               ColumnDefinitions="*,*">
-            <TextBlock Text="{Binding CurrentSet}"/>
+            <TextBlock Text="{Binding CurrentSet}" />
         </Grid>
 
         <Ellipse Grid.Row="1"
@@ -29,26 +29,27 @@
             Classes="CircleKanji">
             知識
         </TextBlock>
-        
+
         <Button Grid.Row="2"
                 HorizontalAlignment="Center"
                 Width="200"
-                Margin="0,20,0,10"
+                Margin="0 20 0 5"
                 Classes="BlueButton Capsule">
             <TextBlock Classes="HorizontalCenter BigButtonText">Start!</TextBlock>
         </Button>
-        
-        <Button Grid.Row="3" 
-                HorizontalAlignment="Center" 
+
+        <Button Grid.Row="3"
+                HorizontalAlignment="Center"
                 Width="200"
+                Margin="0 0 0 5"
                 Classes="BlueButton Capsule">
             <TextBlock Classes="HorizontalCenter BigButtonText">Glossary</TextBlock>
         </Button>
-        
-        <Button Grid.Row="4" 
-                HorizontalAlignment="Center" 
+
+        <Button Grid.Row="4"
+                HorizontalAlignment="Center"
                 Width="200"
-                Classes=" BlueButton Capsule">
+                Classes="BlueOutlineButton Capsule">
             <TextBlock Classes="HorizontalCenter BigButtonText">Settings</TextBlock>
         </Button>
     </Grid>
