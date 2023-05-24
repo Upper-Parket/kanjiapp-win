@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:KanjiApp.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
+             mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="400"
              x:Class="KanjiApp.Views.MainPageView">
 
     <Design.DataContext>
@@ -17,18 +17,12 @@
             <TextBlock Text="{Binding CurrentSet}" />
         </Grid>
 
-        <Ellipse Grid.Row="1"
-                 Fill="{StaticResource LightPink}"
-                 Height="200"
-                 Width="200" />
-
-        <TextBlock
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Grid.Row="1"
-            Classes="CircleKanji">
-            知識
-        </TextBlock>
+        <Border Grid.Row="1"
+                Classes="KanjiCircleBorder">
+            <TextBlock
+                Classes="CircleKanjiText"
+                Text="知識"/>
+        </Border>
 
         <Button Grid.Row="2"
                 HorizontalAlignment="Center"
@@ -50,7 +44,8 @@
         <Button Grid.Row="4"
                 HorizontalAlignment="Center"
                 Width="200"
-                Classes="BlueOutlineButton Capsule">
+                Classes="BlueOutlineButton Capsule"
+                Command="{Binding OpenSettings}">
             <TextBlock Classes="HorizontalCenter BigButtonText">Settings</TextBlock>
         </Button>
     </Grid>

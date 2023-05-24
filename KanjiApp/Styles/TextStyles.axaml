@@ -4,7 +4,7 @@
         <Border Padding="20">
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Classes="CircleKanji">知識</TextBlock>
+                    <TextBlock Classes="CircleKanjiText">知識</TextBlock>
                     <TextBlock VerticalAlignment="Center">CircleKanji</TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
@@ -15,11 +15,13 @@
         </Border>
     </Design.PreviewWith>
 
-    <Style Selector="TextBlock.CircleKanji">
+    <Style Selector="TextBlock.CircleKanjiText">
         <Setter Property="FontFamily" Value="M PLUS 1p" />
         <Setter Property="FontWeight" Value="500" />
         <Setter Property="FontSize" Value="64" />
         <Setter Property="Foreground" Value="{StaticResource Black}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
     </Style>
 
     <Style Selector="TextBlock.BigButtonText">
@@ -31,15 +33,19 @@
     <Style Selector="TextBlock.HorizontalCenter">
         <Setter Property="HorizontalAlignment" Value="Center" />
     </Style>
+    
+    <Style Selector="TextBlock.VerticalCenter">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
 
     <Style Selector="TextBlock.GlossaryKanji">
         <Setter Property="FontWeight" Value="500" />
         <Setter Property="FontSize" Value="36" />
         <Setter Property="FontFamily" Value="M PLUS 1p" />
     </Style>
-    
+
     <Style Selector="TextBlock.GlossaryReading">
-        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="TextWrapping" Value="Wrap" />
         <Setter Property="FontWeight" Value="500" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="FontFamily" Value="M PLUS 1p" />

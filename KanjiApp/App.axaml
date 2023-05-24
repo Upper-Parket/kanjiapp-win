@@ -3,13 +3,14 @@
              xmlns:local="using:KanjiApp"
              x:Class="KanjiApp.App">
     <Application.DataTemplates>
-        <local:ViewLocator/>
+        <local:ViewLocator />
     </Application.DataTemplates>
 
     <Application.Styles>
-        <FluentTheme Mode="Light"/>
+        <FluentTheme Mode="Light" />
         <StyleInclude Source="avares://KanjiApp/Styles/Colors.axaml" />
         <StyleInclude Source="avares://KanjiApp/Styles/TextStyles.axaml" />
         <StyleInclude Source="avares://KanjiApp/Styles/ButtonStyles.axaml" />
+        <StyleInclude Source="avares://KanjiApp/Styles/BorderStyles.axaml" />
     </Application.Styles>
 </Application>
