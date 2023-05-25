@@ -6,7 +6,6 @@ namespace KanjiApp.ViewModels
 {
     public class SettingsViewModel : ViewModelBase
     {
-        private readonly INavigator? _navigator;
         private UserSettings? _userSettings;
 
         private int _kanjisPerPractice;
@@ -35,10 +34,8 @@ namespace KanjiApp.ViewModels
 
         public string Learned => "42/69";
 
-        public SettingsViewModel(INavigator? navigator)
+        public SettingsViewModel(INavigator? navigator) : base(navigator)
         {
-            _navigator = navigator;
-
             _userSettings ??= UserSettings.GetDemo();
             KanjisPerPractice = _userSettings.KanjisPerPractice;
             CurrentSet = _userSettings.CurrentSet;
@@ -52,7 +49,7 @@ namespace KanjiApp.ViewModels
         public void Close()
         {
             Save();
-            _navigator?.OpenMainView();
+            Navigator?.OpenMainView();
         }
 
         public void DecrementKanjisPerPractice()

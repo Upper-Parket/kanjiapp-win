@@ -1,0 +1,57 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:KanjiApp.Onboarding.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="400"
+             x:Class="KanjiApp.Onboarding.Views.WhatIsYourLevelView">
+
+    <Design.DataContext>
+        <vm:WhatIsYourLevelViewModel />
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+        <TextBlock Grid.Row="0">What is your level?</TextBlock>
+
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal">
+            <Button
+                Command="{Binding StartWithN5}"
+                Classes="Capsule BlueButton">
+                N5
+            </Button>
+            <Button
+                Command="{Binding StartWithN4}"
+                Classes="Capsule BlueButton">
+                N4
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal">
+            <Button
+                Command="{Binding StartWithN3}"
+                Classes="Capsule BlueButton">
+                N3
+            </Button>
+            <Button
+                Command="{Binding StartWithN2}"
+                Classes="Capsule BlueButton">
+                N2
+            </Button>
+        </StackPanel>
+
+        <Button Grid.Row="3"
+                Command="{Binding StartWithN1}"
+                Classes="Capsule BlueButton">
+            N1
+        </Button>
+
+        <Button Grid.Row="4"
+                Command="{Binding StartWithN5}"
+                Classes="Capsule PinkButton">
+            I don’t know my level
+        </Button>
+
+    </Grid>
+</UserControl>

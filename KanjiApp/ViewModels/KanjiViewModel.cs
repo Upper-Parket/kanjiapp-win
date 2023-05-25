@@ -11,7 +11,7 @@ namespace KanjiApp.ViewModels
         public string Kuns => string.Join(", ", _kanjiInfo.Kuns);
         public string Translations => string.Join(", ", _kanjiInfo.Translations);
 
-        public KanjiViewModel()
+        public KanjiViewModel() : base(null)
         {
             _kanjiInfo = KanjiInfo.GetDemo();
         }

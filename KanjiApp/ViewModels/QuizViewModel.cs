@@ -4,13 +4,10 @@ namespace KanjiApp.ViewModels
 {
     public class QuizViewModel : ViewModelBase
     {
-        private readonly INavigator? _navigator;
-
         public string Kanji => "test";
 
-        public QuizViewModel(INavigator? navigator)
+        public QuizViewModel(INavigator? navigator) : base(navigator)
         {
-            _navigator = navigator;
         }
 
         public QuizViewModel() : this(null)
@@ -19,7 +16,7 @@ namespace KanjiApp.ViewModels
 
         public void Close()
         {
-            _navigator?.OpenMainView();
+            Navigator?.OpenMainView();
         }
     }
 }
