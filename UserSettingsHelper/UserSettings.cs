@@ -1,5 +1,6 @@
-﻿namespace KanjiApp.Models
+﻿namespace KanjiApp.UserSettingsHelper
 {
+    [Serializable]
     public class UserSettings
     {
         public int KanjisPerPractice { get; set; }

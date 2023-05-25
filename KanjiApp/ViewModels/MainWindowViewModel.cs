@@ -8,7 +8,6 @@ namespace KanjiApp.ViewModels
     public class MainWindowViewModel : ViewModelBase, INavigator
     {
         private ViewModelBase _content;
-        private readonly ViewModelBase _mainView;
 
         public ViewModelBase Content
         {
@@ -18,10 +17,8 @@ namespace KanjiApp.ViewModels
 
         public MainWindowViewModel(string settingsFile) : base(null)
         {
-            _mainView = new MainPageViewModel(this);
-
             Content = File.Exists(settingsFile)
-                ? _mainView
+                ? new MainPageViewModel(this)
                 : new HelloViewModel(this);
         }
 
@@ -32,7 +29,7 @@ namespace KanjiApp.ViewModels
 
         public void OpenMainView()
         {
-            Content = _mainView;
+            Content = new MainPageViewModel(this);
         }
     }
 }

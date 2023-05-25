@@ -1,4 +1,4 @@
-﻿using KanjiApp.Models;
+﻿using KanjiApp.UserSettingsHelper;
 using KanjiApp.Utils;
 using ReactiveUI;
 

@@ -27,5 +27,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\PathHelper\PathHelper.csproj" />
+      <ProjectReference Include="..\UserSettingsHelper\UserSettingsHelper.csproj" />
     </ItemGroup>
 </Project>
