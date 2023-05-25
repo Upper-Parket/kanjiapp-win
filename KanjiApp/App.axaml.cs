@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using KanjiApp.PathHelper.Paths;
 using KanjiApp.ViewModels;
 using KanjiApp.Views;
 
@@ -17,9 +18,11 @@ namespace KanjiApp
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
+                var settingsFile = PathFinder.SettingsFile;
+                
                 desktop.MainWindow = new MainWindow
                 {
-                    DataContext = new MainWindowViewModel(),
+                    DataContext = new MainWindowViewModel(settingsFile),
                 };
             }
 

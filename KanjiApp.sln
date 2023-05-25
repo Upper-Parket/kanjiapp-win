@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KanjiApp", "KanjiApp\KanjiApp.csproj", "{4DA582A6-D032-45BA-A200-AB5768999367}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathHelper", "PathHelper\PathHelper.csproj", "{F014D8C6-C532-45C1-B62B-B6FE2E90254A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{4DA582A6-D032-45BA-A200-AB5768999367}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DA582A6-D032-45BA-A200-AB5768999367}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DA582A6-D032-45BA-A200-AB5768999367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F014D8C6-C532-45C1-B62B-B6FE2E90254A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F014D8C6-C532-45C1-B62B-B6FE2E90254A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F014D8C6-C532-45C1-B62B-B6FE2E90254A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F014D8C6-C532-45C1-B62B-B6FE2E90254A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,4 +1,5 @@
-﻿using KanjiApp.Onboarding.ViewModels;
+﻿using System.IO;
+using KanjiApp.Onboarding.ViewModels;
 using KanjiApp.Utils;
 using ReactiveUI;
 
@@ -15,10 +16,13 @@ namespace KanjiApp.ViewModels
             set => this.RaiseAndSetIfChanged(ref _content, value);
         }
 
-        public MainWindowViewModel() : base(null)
+        public MainWindowViewModel(string settingsFile) : base(null)
         {
             _mainView = new MainPageViewModel(this);
-            Content = new HelloViewModel(this);
+
+            Content = File.Exists(settingsFile)
+                ? _mainView
+                : new HelloViewModel(this);
         }
 
         public void PresentView(ViewModelBase viewModelBase)
