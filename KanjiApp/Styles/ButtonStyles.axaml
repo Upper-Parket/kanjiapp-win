@@ -55,4 +55,12 @@
         <Setter Property="TextBlock.Foreground" Value="{StaticResource DeepBlue}" />
     </Style>
 
+    <Style Selector="Button.Wide">
+        <Setter Property="Width" Value="200" />
+    </Style>
+
+    <Style Selector="Button.Medium">
+        <Setter Property="Width" Value="100" />
+    </Style>
+
 </Styles>

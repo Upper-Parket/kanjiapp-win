@@ -37,5 +37,10 @@ namespace KanjiApp.Onboarding.ViewModels
         {
             Navigator?.OpenMainView();
         }
+
+        public void GoToHowManyYears()
+        {
+            Navigator?.PresentView(new HowManyYearsViewModel(Navigator));
+        }
     }
 }

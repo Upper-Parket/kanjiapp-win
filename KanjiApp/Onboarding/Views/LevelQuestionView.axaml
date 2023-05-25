@@ -10,30 +10,42 @@
         <vm:LevelQuestionViewModel />
     </Design.DataContext>
 
-    <Grid RowDefinitions="Auto,Auto,Auto">
+    <Grid RowDefinitions="Auto,Auto,Auto"
+          Margin="60 100 60 0">
 
-        <TextBlock Grid.Row="0">Do you know your JLPT level?</TextBlock>
+        <TextBlock Grid.Row="0"
+                   Classes="HeaderText"
+                   Text="Do you know your JLPT level?" />
 
-        <StackPanel Grid.Row="1"
-                    Orientation="Horizontal">
+        <Grid Grid.Row="1"
+              Margin="0 20 0 0"
+              HorizontalAlignment="Center"
+              ColumnDefinitions="Auto,Auto">
 
-            <Button
-                Command="{Binding GoToWhatIsYourLevel}"
-                Classes="Capsule BlueButton">
-                Yes
+            <Button Grid.Column="0"
+                    Margin="0 0 20 0"
+                    Command="{Binding GoToWhatIsYourLevel}"
+                    Classes="Capsule BlueButton Medium">
+                <TextBlock Classes="BigButtonText"
+                           Text="Yes" />
             </Button>
-            <Button
-                Command="{Binding GoToHowManyYears}"
-                Classes="Capsule BlueButton">
-                No
+            <Button Grid.Column="1"
+                    Command="{Binding GoToHowManyYears}"
+                    Classes="Capsule BlueButton Medium">
+                <TextBlock
+                    Classes="BigButtonText"
+                    Text="No" />
             </Button>
 
-        </StackPanel>
+        </Grid>
 
         <Button Grid.Row="2"
+                Margin="0 120 0 0"
                 Command="{Binding GoToImNew}"
-                Classes="Capsule PinkButton">
-            I’m new to Japanese
+                HorizontalAlignment="Center"
+                Classes="Capsule PinkButton Wide">
+            <TextBlock Classes="BigButtonText"
+                       Text="I’m new to Japanese" />
         </Button>
 
     </Grid>

@@ -10,25 +10,39 @@
         <vm:HowManyYearsViewModel />
     </Design.DataContext>
 
-    <Grid RowDefinitions="Auto,Auto,Auto">
-        <TextBlock Grid.Row="0">How many years do you learn Japanese for?</TextBlock>
+    <Grid RowDefinitions="Auto,Auto,Auto"
+          Margin="60 100 60 0">
+        <TextBlock Grid.Row="0"
+                   Classes="HeaderText"
+                   TextWrapping="Wrap"
+                   Text="How many years have you been learning Japanese?" />
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <TextBlock>0</TextBlock>
+        <StackPanel Grid.Row="1"
+                    Margin="0 20 0 0"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <TextBlock Margin="0 0 10 0"
+                       Text="0"
+                       Classes="MainText VerticalCenter HorizontalCenter" />
             <Slider Width="200"
                     Minimum="0"
                     Maximum="8"
                     TickFrequency="1"
                     IsSnapToTickEnabled="True"
-                    Value="{Binding SliderValue}"/>
-            <TextBlock>8+</TextBlock>
+                    Value="{Binding SliderValue}" />
+            <TextBlock Margin="10 0 0 0"
+                       Classes="MainText VerticalCenter HorizontalCenter"
+                       Text="8+" />
 
         </StackPanel>
 
         <Button Grid.Row="2"
+                Margin="0 70 0 0"
                 Command="{Binding GoToMainView}"
-                Classes="Capsule BlueButton">
-            Done!
+                HorizontalAlignment="Center"
+                Classes="Capsule BlueButton Wide">
+            <TextBlock Classes="BigButtonText"
+                       Text="Done!" />
         </Button>
     </Grid>
 

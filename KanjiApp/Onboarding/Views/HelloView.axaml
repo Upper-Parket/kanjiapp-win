@@ -11,24 +11,50 @@
     </Design.DataContext>
 
 
-    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*"
+          Margin="60 100 60 0">
 
-        <TextBlock Grid.Row="0" Grid.Column="0">Konnichiwa!</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="0"
+                   Text="Konnichiwa!"
+                   Classes="HeaderText" />
 
-        <TextBlock Grid.Row="1">This is a simple app for learning Japanese kanjis</TextBlock>
+        <Grid Grid.Row="1" ColumnDefinitions="Auto,*"
+              Margin="0 10 0 0">
+            <PathIcon Grid.Column="0"
+                      Data="{StaticResource LearnKanjiIcon}"
+                      Classes="MainIcon" />
+            <TextBlock Grid.Column="1"
+                       Classes="MainText"
+                       Margin="10 0 0 0"
+                       VerticalAlignment="Center"
+                       Text="This is a simple app for learning Japanese kanjis" />
+        </Grid>
 
-        <TextBlock Grid.Row="2">Please answer a series of simple questions that would help us determine your language level</TextBlock>
+        <Grid Grid.Row="2" ColumnDefinitions="Auto,*">
+            <PathIcon Grid.Column="0"
+                      Data="{StaticResource PadIcon}"
+                      Classes="MainIcon" />
+            <TextBlock Grid.Column="1"
+                       Classes="MainText"
+                       Margin="10 0 0 0"
+                       VerticalAlignment="Center"
+                       Text="Please answer a series of simple questions that would help us determine your language level" />
+        </Grid>
 
         <Button Grid.Row="3"
+                Margin="0 30 0 0"
                 Command="{Binding GoToNextView}"
-                Classes="Capsule BlueButton">
-            Got it!
+                HorizontalAlignment="Center"
+                Classes="Capsule BlueButton Wide">
+            <TextBlock Classes="BigButtonText" Text="Got it!" />
         </Button>
 
         <Button Grid.Row="4"
+                Margin="0 10 0 0"
                 Command="{Binding SkipOnboarding}"
-                Classes="Capsule BlueOutlineButton">
-            Skip
+                HorizontalAlignment="Center"
+                Classes="Capsule BlueOutlineButton Wide">
+            <TextBlock Classes="BigButtonText" Text="Skip" />
         </Button>
 
     </Grid>
