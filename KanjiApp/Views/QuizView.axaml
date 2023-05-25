@@ -11,30 +11,33 @@
     </Design.DataContext>
 
     <Grid RowDefinitions="Auto,Auto,Auto,Auto">
-        
+
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Command="{Binding Close}">Close</Button>
+            <Button Classes="CloseButton"
+                    Command="{Binding Close}">
+                <PathIcon Classes="CloseIcon" Data="{StaticResource CloseIcon}" />
+            </Button>
             <ProgressBar />
         </StackPanel>
-        
-        <Border Grid.Row="1" Grid.Column="0" 
+
+        <Border Grid.Row="1" Grid.Column="0"
                 HorizontalAlignment="Center"
                 Classes="KanjiCircleBorder">
-            <TextBlock Classes="CircleKanjiText" 
-                Text="{Binding Kanji}" />
+            <TextBlock Classes="CircleKanjiText"
+                       Text="{Binding Kanji}" />
         </Border>
-        
+
         <TextBox Grid.Row="2"
-                 Watermark="Romaji"></TextBox>
-        
-        <StackPanel Grid.Row="3" 
+                 Watermark="Romaji">
+        </TextBox>
+
+        <StackPanel Grid.Row="3"
                     Orientation="Horizontal"
-                    HorizontalAlignment="Center"
-                    >
+                    HorizontalAlignment="Center">
             <Button>Check</Button>
             <Button>Skip</Button>
         </StackPanel>
-        
+
     </Grid>
 
 </UserControl>

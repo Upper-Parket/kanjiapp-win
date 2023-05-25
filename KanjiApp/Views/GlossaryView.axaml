@@ -13,8 +13,9 @@
     <Grid RowDefinitions="Auto,*">
         <Button
             Grid.Row="0"
+            Classes="CloseButton"
             Command="{Binding Close}">
-            Close
+            <PathIcon Classes="CloseIcon" Data="{StaticResource CloseIcon}" />
         </Button>
 
         <ScrollViewer Grid.Row="1"

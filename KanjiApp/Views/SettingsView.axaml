@@ -11,7 +11,11 @@
     </Design.DataContext>
 
     <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
-        <Button Grid.Row="0" Command="{Binding Close}">Close</Button>
+        <Button Grid.Row="0"
+                Classes="CloseButton"
+                Command="{Binding Close}">
+            <PathIcon Classes="CloseIcon" Data="{StaticResource CloseIcon}" />
+        </Button>
         <Border Grid.Row="1"
                 Classes="KanjiCircleBorder">
             <TextBlock Classes="CircleKanjiText"
@@ -23,41 +27,45 @@
               ColumnDefinitions="Auto,*,*,*"
               HorizontalAlignment="Center">
 
-            <TextBlock Grid.Row="0" Grid.Column="0" 
+            <TextBlock Grid.Row="0" Grid.Column="0"
                        Classes="VerticalCenter"
                        Text="Set" />
             <ComboBox Grid.Row="0" Grid.Column="2" />
 
-            <TextBlock Grid.Row="1" Grid.Column="0" 
+            <TextBlock Grid.Row="1" Grid.Column="0"
                        Classes="VerticalCenter"
                        Text="Kanjis per practice" />
             <Button Grid.Row="1" Grid.Column="1"
-                    Command="{Binding DecrementKanjisPerPractice}"
-                    >-</Button>
-            <TextBlock Grid.Row="1" Grid.Column="2" 
+                    Command="{Binding DecrementKanjisPerPractice}">
+                -
+            </Button>
+            <TextBlock Grid.Row="1" Grid.Column="2"
                        Classes="VerticalCenter HorizontalCenter"
                        Text="{Binding KanjisPerPractice}" />
             <Button Grid.Row="1" Grid.Column="3"
-                    Command="{Binding IncrementKanjisPerPractice}"
-                    >+</Button>
+                    Command="{Binding IncrementKanjisPerPractice}">
+                +
+            </Button>
 
-            <TextBlock Grid.Row="2" Grid.Column="0" 
+            <TextBlock Grid.Row="2" Grid.Column="0"
                        Classes="VerticalCenter"
                        Text="Guessed till learned" />
             <Button Grid.Row="2" Grid.Column="1"
-                    Command="{Binding DecrementGuessedTillLearned}"
-                    >-</Button>
-            <TextBlock Grid.Row="2" Grid.Column="2" 
+                    Command="{Binding DecrementGuessedTillLearned}">
+                -
+            </Button>
+            <TextBlock Grid.Row="2" Grid.Column="2"
                        Text="{Binding GuessedTillKnown}"
-                       Classes="VerticalCenter HorizontalCenter"/>
+                       Classes="VerticalCenter HorizontalCenter" />
             <Button Grid.Row="2" Grid.Column="3"
-                    Command="{Binding IncrementGuessedTillLearned}"
-                    >+</Button>
+                    Command="{Binding IncrementGuessedTillLearned}">
+                +
+            </Button>
 
             <TextBlock Grid.Row="3" Grid.Column="0"
                        Classes="VerticalCenter"
                        Text="Progress" />
-            <TextBlock Grid.Row="3" Grid.Column="2" 
+            <TextBlock Grid.Row="3" Grid.Column="2"
                        Classes="VerticalCenter HorizontalCenter"
                        Text="{Binding Learned}" />
         </Grid>

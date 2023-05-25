@@ -6,6 +6,9 @@
                 <Button Classes="BlueButton Capsule" Width="250" Margin="5">Text</Button>
                 <Button Classes="PinkButton Capsule" Width="250" Margin="5">Text</Button>
                 <Button Classes="BlueOutlineButton Capsule" Width="250" Margin="5">Blue outline</Button>
+                <Button Classes="CloseButton">
+                    <PathIcon Classes="CloseIcon" Data="{StaticResource CloseIcon}" />
+                </Button>
             </StackPanel>
         </Border>
     </Design.PreviewWith>
@@ -61,6 +64,17 @@
 
     <Style Selector="Button.Medium">
         <Setter Property="Width" Value="100" />
+    </Style>
+
+    <Style Selector="Button.CloseButton">
+        <Setter Property="Width" Value="24" />
+        <Setter Property="Height" Value="24" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Button.CloseButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource Background}" />
+        <Setter Property="RenderTransform" Value="scale(1.1)" />
     </Style>
 
 </Styles>
