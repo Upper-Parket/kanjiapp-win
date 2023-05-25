@@ -24,6 +24,11 @@ namespace KanjiApp.ViewModels
         {
         }
 
+        public void OpenQuiz()
+        {
+            _navigator?.PresentView(new QuizViewModel(_navigator));
+        }
+        
         public void OpenGlossary()
         {
             _navigator?.PresentView(new GlossaryViewModel(_navigator));

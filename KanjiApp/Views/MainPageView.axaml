@@ -28,7 +28,8 @@
                 HorizontalAlignment="Center"
                 Width="200"
                 Margin="0 20 0 5"
-                Classes="BlueButton Capsule">
+                Classes="BlueButton Capsule"
+                Command="{Binding OpenQuiz}">
             <TextBlock Classes="HorizontalCenter BigButtonText">Start!</TextBlock>
         </Button>
 
