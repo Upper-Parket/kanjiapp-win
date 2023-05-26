@@ -10,18 +10,19 @@
         <vm:MainPageViewModel />
     </Design.DataContext>
 
-    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
-        <Grid Grid.Row="0"
-              RowDefinitions="Auto,Auto"
-              ColumnDefinitions="*,*">
-            <TextBlock Text="{Binding CurrentSet}" />
-        </Grid>
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+          Classes="GeneralMargin">
+
+        <TextBlock Grid.Row="0"
+                   Classes="MainText"
+                   Height="25"
+                   Text="{Binding CurrentSet}" />
 
         <Border Grid.Row="1"
                 Classes="KanjiCircleBorder">
             <TextBlock
                 Classes="CircleKanjiText"
-                Text="知識"/>
+                Text="知識" />
         </Border>
 
         <Button Grid.Row="2"

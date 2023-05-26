@@ -10,9 +10,11 @@
         <vm:QuizViewModel />
     </Design.DataContext>
 
-    <Grid RowDefinitions="Auto,Auto,Auto,Auto">
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto"
+          Classes="GeneralMargin">
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
+        <StackPanel Grid.Row="0" Orientation="Horizontal"
+                    Height="25">
             <Button Classes="CloseButton"
                     Command="{Binding Close}">
                 <PathIcon Classes="CloseIcon" Data="{StaticResource CloseIcon}" />

@@ -10,5 +10,15 @@
         {
             return UserSettings.GetDemo();
         }
+
+        public static void CreateNew(string setName)
+        {
+            _userSettings = UserSettings.CreateNew(setName);
+        }
+
+        public static void Save(UserSettings settings)
+        {
+            _userSettings = settings;
+        }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using KanjiApp.UserSettingsHelper;
 using KanjiApp.Utils;
-using ReactiveUI;
 
 namespace KanjiApp.ViewModels
 {

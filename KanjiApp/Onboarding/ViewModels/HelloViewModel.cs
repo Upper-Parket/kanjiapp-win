@@ -1,4 +1,6 @@
-﻿using KanjiApp.Utils;
+﻿using KanjiApp.Constants;
+using KanjiApp.UserSettingsHelper;
+using KanjiApp.Utils;
 using KanjiApp.ViewModels;
 
 namespace KanjiApp.Onboarding.ViewModels
@@ -20,6 +22,7 @@ namespace KanjiApp.Onboarding.ViewModels
 
         public void SkipOnboarding()
         {
+            SettingsInstance.CreateNew(SetNames.N5);
             Navigator?.OpenMainView();
         }
     }

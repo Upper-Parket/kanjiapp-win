@@ -10,12 +10,14 @@
         <vm:SettingsViewModel />
     </Design.DataContext>
 
-    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
-        <Button Grid.Row="0"
-                Classes="CloseButton"
-                Command="{Binding Close}">
-            <PathIcon Classes="CloseIcon" Data="{StaticResource CloseIcon}" />
-        </Button>
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+          Classes="GeneralMargin">
+        <StackPanel Grid.Row="0" Height="25">
+            <Button Classes="CloseButton"
+                    Command="{Binding Close}">
+                <PathIcon Classes="CloseIcon" Data="{StaticResource CloseIcon}" />
+            </Button>
+        </StackPanel>
         <Border Grid.Row="1"
                 Classes="KanjiCircleBorder">
             <TextBlock Classes="CircleKanjiText"
@@ -24,49 +26,58 @@
 
         <Grid Grid.Row="2"
               RowDefinitions="*,*,*,*"
+              Margin="0 10 0 0"
               ColumnDefinitions="Auto,*,*,*"
               HorizontalAlignment="Center">
 
             <TextBlock Grid.Row="0" Grid.Column="0"
-                       Classes="VerticalCenter"
+                       Classes="VerticalCenter MainText"
                        Text="Set" />
-            <ComboBox Grid.Row="0" Grid.Column="2" />
+            <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"
+                      Items="{Binding ComboboxItems}"
+                      SelectedItem="{Binding CurrentSet}"
+                      Classes="MainText"
+                      Width="130" />
 
             <TextBlock Grid.Row="1" Grid.Column="0"
-                       Classes="VerticalCenter"
+                       Classes="VerticalCenter MainText"
                        Text="Kanjis per practice" />
             <Button Grid.Row="1" Grid.Column="1"
-                    Command="{Binding DecrementKanjisPerPractice}">
+                    Classes="PlusMinusButtons"
+                    Command="{Binding OnDecrementKanjisPerPractice}">
                 -
             </Button>
             <TextBlock Grid.Row="1" Grid.Column="2"
-                       Classes="VerticalCenter HorizontalCenter"
+                       Classes="VerticalCenter HorizontalCenter MainText"
                        Text="{Binding KanjisPerPractice}" />
             <Button Grid.Row="1" Grid.Column="3"
-                    Command="{Binding IncrementKanjisPerPractice}">
+                    Classes="PlusMinusButtons"
+                    Command="{Binding OnIncrementKanjisPerPractice}">
                 +
             </Button>
 
             <TextBlock Grid.Row="2" Grid.Column="0"
-                       Classes="VerticalCenter"
+                       Classes="VerticalCenter MainText"
                        Text="Guessed till learned" />
             <Button Grid.Row="2" Grid.Column="1"
-                    Command="{Binding DecrementGuessedTillLearned}">
+                    Classes="PlusMinusButtons"
+                    Command="{Binding OnDecrementGuessedTillLearned}">
                 -
             </Button>
             <TextBlock Grid.Row="2" Grid.Column="2"
                        Text="{Binding GuessedTillKnown}"
-                       Classes="VerticalCenter HorizontalCenter" />
+                       Classes="VerticalCenter HorizontalCenter MainText" />
             <Button Grid.Row="2" Grid.Column="3"
-                    Command="{Binding IncrementGuessedTillLearned}">
+                    Classes="PlusMinusButtons"
+                    Command="{Binding OnIncrementGuessedTillLearned}">
                 +
             </Button>
 
             <TextBlock Grid.Row="3" Grid.Column="0"
-                       Classes="VerticalCenter"
+                       Classes="VerticalCenter MainText"
                        Text="Progress" />
             <TextBlock Grid.Row="3" Grid.Column="2"
-                       Classes="VerticalCenter HorizontalCenter"
+                       Classes="VerticalCenter HorizontalCenter MainText"
                        Text="{Binding Learned}" />
         </Grid>
     </Grid>

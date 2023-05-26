@@ -1,4 +1,6 @@
-﻿using KanjiApp.Utils;
+﻿using KanjiApp.Constants;
+using KanjiApp.UserSettingsHelper;
+using KanjiApp.Utils;
 using KanjiApp.ViewModels;
 using ReactiveUI;
 
@@ -13,7 +15,7 @@ namespace KanjiApp.Onboarding.ViewModels
             get => _sliderValue;
             set => this.RaiseAndSetIfChanged(ref _sliderValue, value);
         }
-        
+
         public HowManyYearsViewModel(INavigator? navigator) : base(navigator)
         {
         }
@@ -24,6 +26,17 @@ namespace KanjiApp.Onboarding.ViewModels
 
         public void GoToMainView()
         {
+            var setName = SliderValue switch
+            {
+                <= 1 => SetNames.N5,
+                <= 2 => SetNames.N4,
+                <= 4 => SetNames.N3,
+                <= 6 => SetNames.N2,
+                _ => SetNames.N1
+            };
+            SettingsInstance.CreateNew(setName);
+
+
             Navigator?.OpenMainView();
         }
     }

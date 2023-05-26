@@ -9,6 +9,11 @@
                 <Button Classes="CloseButton">
                     <PathIcon Classes="CloseIcon" Data="{StaticResource CloseIcon}" />
                 </Button>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button Classes="PlusMinusButtons">-</Button>
+                    <Button Classes="PlusMinusButtons">+</Button>
+                </StackPanel>
             </StackPanel>
         </Border>
     </Design.PreviewWith>
@@ -70,11 +75,32 @@
         <Setter Property="Width" Value="24" />
         <Setter Property="Height" Value="24" />
         <Setter Property="Background" Value="Transparent" />
+        <Setter Property="RenderTransform" Value="scale(0.7)" />
     </Style>
 
     <Style Selector="Button.CloseButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="{StaticResource Background}" />
         <Setter Property="RenderTransform" Value="scale(1.1)" />
+    </Style>
+
+    <Style Selector="Button.PlusMinusButtons">
+        <Setter Property="TextBlock.FontFamily" Value="M PLUS 1p" />
+        <Setter Property="TextBlock.FontSize" Value="14" />
+        <Setter Property="TextBlock.FontWeight" Value="500" />
+        <!-- <Setter Property="Height" Value="30"/> -->
+        <Setter Property="Foreground" Value="{StaticResource LightBlue}" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Button.PlusMinusButtons:pointerover /template/ ContentPresenter#Part_ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource Background}" />
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource LightBlue}" />
+    </Style>
+
+    <Style Selector="Button.PlusMinusButtons:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="RenderTransform" Value="scale(1.4)" />
+        <Setter Property="Background" Value="{StaticResource Background}" />
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource LightBlue}" />
     </Style>
 
 </Styles>

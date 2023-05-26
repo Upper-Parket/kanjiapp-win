@@ -13,5 +13,6 @@
         <StyleInclude Source="avares://KanjiApp/Styles/ButtonStyles.axaml" />
         <StyleInclude Source="avares://KanjiApp/Styles/BorderStyles.axaml" />
         <StyleInclude Source="avares://KanjiApp/Styles/Icons.axaml" />
+        <StyleInclude Source="avares://KanjiApp/Styles/GridStyles.axaml" />
     </Application.Styles>
 </Application>

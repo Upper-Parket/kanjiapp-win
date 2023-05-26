@@ -16,5 +16,15 @@
                 CurrentSet = "N7"
             };
         }
+
+        public static UserSettings CreateNew(string setName)
+        {
+            return new UserSettings
+            {
+                KanjisPerPractice = 20,
+                GuessedTillKnown = 5,
+                CurrentSet = setName
+            };
+        }
     }
 }
