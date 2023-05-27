@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:KanjiApp.ViewModels"
+             xmlns:converters="clr-namespace:KanjiApp.Converters"
              mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="400"
              x:Class="KanjiApp.Views.QuizView">
 
@@ -13,33 +14,62 @@
     <Grid RowDefinitions="Auto,Auto,Auto,Auto"
           Classes="GeneralMargin">
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal"
-                    Height="25">
-            <Button Classes="CloseButton"
-                    Command="{Binding Close}">
-                <PathIcon Classes="CloseIcon" Data="{StaticResource CloseIcon}" />
-            </Button>
-            <ProgressBar />
-        </StackPanel>
+        <Grid.Resources>
+            <converters:QuizStateToBrushConverter x:Key="QuizStateToBrushConverter" />
+        </Grid.Resources>
 
-        <Border Grid.Row="1" Grid.Column="0"
+        <Grid Grid.Row="0" ColumnDefinitions="Auto,*"
+              Height="25" Margin="0 0 30 0">
+            <Button Grid.Column="0"
+                    Classes="CloseButton"
+                    Command="{Binding Close}">
+                <PathIcon Classes="CloseIcon"
+                          Data="{StaticResource CloseIcon}" />
+            </Button>
+            <ProgressBar Grid.Column="1"
+                         Maximum="{Binding TotalCount}"
+                         Value="{Binding Index}" />
+        </Grid>
+        
+        <Border Grid.Row="1"
                 HorizontalAlignment="Center"
                 Classes="KanjiCircleBorder">
+            <Button.Background>
+                <MultiBinding Converter="{StaticResource QuizStateToBrushConverter}">
+                    <Binding Path="State" />
+                    <Binding Source="{StaticResource LightPink}" />
+                    <Binding Source="{StaticResource Red}" />
+                    <Binding Source="{StaticResource Green}" />
+                </MultiBinding>
+            </Button.Background>
             <TextBlock Classes="CircleKanjiText"
-                       Text="{Binding Kanji}" />
+                       Text="{Binding CircleContent}" />
         </Border>
 
         <TextBox Grid.Row="2"
-                 Watermark="Romaji">
+                 Margin="0 10 0 0"
+                 Classes="MainText"
+                 Width="250"
+                 CornerRadius="100"
+                 Watermark="Romaji"
+                 Text="{Binding Input}">
         </TextBox>
 
         <StackPanel Grid.Row="3"
+                    Margin="0 10 0 0"
                     Orientation="Horizontal"
                     HorizontalAlignment="Center">
-            <Button>Check</Button>
-            <Button>Skip</Button>
+            <Button Margin="0 0 10 0"
+                    Classes="Capsule PinkButton Medium"
+                    Command="{Binding OnCheck}">
+                <TextBlock Classes="BigButtonText"
+                           Text="Check" />
+            </Button>
+            <Button Classes="Capsule PinkButton Medium"
+                    Command="{Binding RightButton}">
+                <TextBlock Classes="BigButtonText"
+                           Text="{Binding RightButtonText}" />
+            </Button>
         </StackPanel>
-
     </Grid>
-
 </UserControl>

@@ -11,18 +11,35 @@ namespace KanjiApp.Models
         public int TimesGuessed { get; set; }
         public bool Enabled { get; set; }
 
+        public KanjiInfo(string kanji, IEnumerable<string> ons, IEnumerable<string> kuns,
+            IEnumerable<string> translations, int timesGuessed = 0, bool enabled = true)
+        {
+            Kanji = kanji;
+            Ons = ons;
+            Kuns = kuns;
+            Translations = translations;
+            TimesGuessed = timesGuessed;
+            Enabled = enabled;
+        }
+
         public static KanjiInfo GetDemo()
         {
-            var kanji = new KanjiInfo
-            {
-                Kanji = "日",
-                Ons = new[] { "nichi", "jitsu" },
-                Kuns = new[] { "hi", "-bi", "-ka" },
-                Translations = new[] { "day", "sun", "Japan", "counter for days" },
-                TimesGuessed = 2,
-                Enabled = true
-            };
+            var kanji = new KanjiInfo("日", new[] { "nichi", "jitsu" }, new[] { "hi", "-bi", "-ka" },
+                new[] { "day", "sun", "Japan", "counter for days" });
             return kanji;
+        }
+
+        public static KanjiInfo[] GetDemoQuiz()
+        {
+            return new[]
+            {
+                new KanjiInfo("日", new[] { "nichi", "jitsu" }, new[] { "hi", "-bi", "-ka" },
+                    new[] { "day", "sun", "Japan", "counter for days" }),
+                new KanjiInfo("一", new[] { "ichi" }, new[] { "hito(tsu)" },
+                    new[] { "one" }),
+                new KanjiInfo("国", new[] { "koku" },
+                    new[] { "kuni" }, new[] { "country" })
+            };
         }
     }
 }

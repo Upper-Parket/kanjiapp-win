@@ -87,12 +87,11 @@
         <Setter Property="TextBlock.FontFamily" Value="M PLUS 1p" />
         <Setter Property="TextBlock.FontSize" Value="14" />
         <Setter Property="TextBlock.FontWeight" Value="500" />
-        <!-- <Setter Property="Height" Value="30"/> -->
         <Setter Property="Foreground" Value="{StaticResource LightBlue}" />
         <Setter Property="Background" Value="Transparent" />
     </Style>
 
-    <Style Selector="Button.PlusMinusButtons:pointerover /template/ ContentPresenter#Part_ContentPresenter">
+    <Style Selector="Button.PlusMinusButtons:pointerover /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="{StaticResource Background}" />
         <Setter Property="TextBlock.Foreground" Value="{StaticResource LightBlue}" />
     </Style>
