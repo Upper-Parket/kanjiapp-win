@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace KanjiApp.Models
 {
@@ -20,6 +21,18 @@ namespace KanjiApp.Models
             Translations = translations;
             TimesGuessed = timesGuessed;
             Enabled = enabled;
+        }
+
+        public string GetOns() => GetCollectionAsString(Ons);
+        public string GetKuns() => GetCollectionAsString(Kuns);
+        public string GetTranslations() => GetCollectionAsString(Translations);
+
+        private static string GetCollectionAsString(IEnumerable<string> collection)
+        {
+            var array = collection as string[] ?? collection.ToArray();
+            return array.Any()
+                ? string.Join(", ", array)
+                : string.Empty;
         }
 
         public static KanjiInfo GetDemo()
