@@ -71,7 +71,7 @@
             <Brush x:Key="DeepBlue">#445CB1</Brush>
 
             <Brush x:Key="Green">#94FFB2</Brush>
-            <Brush x:Key="Red">#BC022A</Brush>
+            <Brush x:Key="Red">#F4365F</Brush>
         </Style.Resources>
     </Style>
 </Styles>

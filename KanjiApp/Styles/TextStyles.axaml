@@ -66,4 +66,12 @@
         <Setter Property="FontSize" Value="24" />
     </Style>
     
+    <Style Selector="TextBlock.Transitionable">
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Foreground" Duration="0:0:0.5" />
+            </Transitions>
+        </Setter>
+    </Style>
+    
 </Styles>

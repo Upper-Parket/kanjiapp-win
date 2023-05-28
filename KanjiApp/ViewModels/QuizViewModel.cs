@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows.Input;
 using KanjiApp.Enums;
 using KanjiApp.Models;
@@ -87,12 +86,12 @@ namespace KanjiApp.ViewModels
 
         #region TransformX
 
-        private int _transformX;
+        private bool _moved;
 
-        public int TransformX
+        public bool Moved
         {
-            get => _transformX;
-            set => this.RaiseAndSetIfChanged(ref _transformX, value);
+            get => _moved;
+            set => this.RaiseAndSetIfChanged(ref _moved, value);
         }
 
         #endregion
@@ -140,15 +139,13 @@ namespace KanjiApp.ViewModels
         public QuizViewModel(INavigator? navigator) : base(navigator)
         {
             Index = 0;
-            TransformX = 70;
+            Moved = true;
             _kanjiInfos = KanjiInfo.GetDemoQuiz();
             State = QuizState.New;
             RightButtonText = "Reveal";
-            CircleContent = _kanjiInfos[_index].Kanji;
+            CircleContent = _kanjiInfos[Index].Kanji;
             CheckEnabled = true;
 
-            this.WhenAnyValue(x => x.Index)
-                .Subscribe(_ => OnIndexChanged());
             var checkEnabled = this.WhenAnyValue(x => x.CheckEnabled,
                 x => x == true);
             OnCheck = ReactiveCommand.Create(Check, checkEnabled);
@@ -158,7 +155,7 @@ namespace KanjiApp.ViewModels
         {
         }
 
-        private void OnIndexChanged()
+        private void SetAnswer()
         {
             CurrentOns = _kanjiInfos[Index].GetOns();
             CurrentKuns = _kanjiInfos[Index].GetKuns();
@@ -198,14 +195,14 @@ namespace KanjiApp.ViewModels
         private void Reveal()
         {
             CheckEnabled = false;
+            SetAnswer();
             AnswerShown = true;
+            Moved = false;
+
             if (Index == TotalCount - 1)
                 RightButtonText = "Results";
             else
                 RightButtonText = "Next";
-
-            TransformX = 0;
-            // todo show kanji info
         }
 
         private void Next()
@@ -217,13 +214,15 @@ namespace KanjiApp.ViewModels
             CircleContent = _kanjiInfos[Index].Kanji;
             Input = string.Empty;
             RightButtonText = "Reveal";
-            TransformX = 70;
+            Moved = true;
         }
 
         private void Results()
         {
+            Index += 1;
+            State = QuizState.New;
             AnswerShown = false;
-            TransformX = 70;
+            Moved = true;
             Input = string.Empty;
             CheckEnabled = false;
             CircleContent = "42/69";

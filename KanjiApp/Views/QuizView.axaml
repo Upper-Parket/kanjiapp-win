@@ -28,14 +28,28 @@
             </Button>
             <ProgressBar Grid.Column="1"
                          Maximum="{Binding TotalCount}"
-                         Value="{Binding Index}" />
+                         Value="{Binding Index}"
+                         IsIndeterminate="False"
+                         Foreground="{StaticResource LightBlue}">
+            </ProgressBar>
         </Grid>
 
         <Grid Grid.Row="1" ColumnDefinitions="Auto,140"
-              HorizontalAlignment="Center">
-            <Grid.RenderTransform>
-                <TranslateTransform X="{Binding TransformX}" />
-            </Grid.RenderTransform>
+              HorizontalAlignment="Center"
+              Classes.Moved="{Binding Moved}">
+
+            <Grid.Styles>
+                <Style Selector="Grid.Moved">
+                    <Setter Property="RenderTransform" Value="translateX(70px)" />
+                </Style>
+            </Grid.Styles>
+
+            <Grid.Transitions>
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.5" />
+                </Transitions>
+            </Grid.Transitions>
+
             <Border Grid.Column="0"
                     HorizontalAlignment="Center"
                     Classes="KanjiCircleBorder">
@@ -47,21 +61,41 @@
                         <Binding Source="{StaticResource Green}" />
                     </MultiBinding>
                 </Border.Background>
+                <Border.Transitions>
+                    <Transitions>
+                        <BrushTransition Property="Background" Duration="0:0:0.1" />
+                    </Transitions>
+                </Border.Transitions>
                 <TextBlock Classes="CircleKanjiText"
                            Text="{Binding CircleContent}" />
             </Border>
 
             <Grid Grid.Column="1" RowDefinitions="*,*,*"
                   VerticalAlignment="Center"
-                  Margin="10 0 0 0"
-                  IsVisible="{Binding AnswerShown}">
-                <TextBlock Grid.Row="0" Classes="MainText" Margin="0 0 0 10"
-                           Text="{Binding CurrentOns}" />
-                <TextBlock Grid.Row="1" Classes="MainText" Margin="0 0 0 10"
-                           Text="{Binding CurrentKuns}" />
-                <TextBlock Grid.Row="2" Classes="MainText" Text="{Binding CurrentTranslations}" />
-            </Grid>
+                  Margin="10 0 0 0">
 
+                <Grid.Styles>
+                    <Style Selector="TextBlock.Visible">
+                        <Setter Property="Foreground" Value="{StaticResource Black}" />
+                    </Style>
+                    <Style Selector="TextBlock.Invisible">
+                        <Setter Property="Foreground" Value="{StaticResource White}" />
+                    </Style>
+                </Grid.Styles>
+
+                <TextBlock Grid.Row="0" Classes="MainText Transitionable" Margin="0 0 0 10"
+                           Classes.Visible="{Binding AnswerShown}"
+                           Classes.Invisible="{Binding !AnswerShown}"
+                           Text="{Binding CurrentOns}" />
+                <TextBlock Grid.Row="1" Classes="MainText Transitionable" Margin="0 0 0 10"
+                           Classes.Visible="{Binding AnswerShown}"
+                           Classes.Invisible="{Binding !AnswerShown}"
+                           Text="{Binding CurrentKuns}" />
+                <TextBlock Grid.Row="2" Classes="MainText Transitionable"
+                           Classes.Visible="{Binding AnswerShown}"
+                           Classes.Invisible="{Binding !AnswerShown}"
+                           Text="{Binding CurrentTranslations}" />
+            </Grid>
         </Grid>
 
         <TextBox Grid.Row="2"
