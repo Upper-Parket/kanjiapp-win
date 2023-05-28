@@ -14,5 +14,6 @@
         <StyleInclude Source="avares://KanjiApp/Styles/BorderStyles.axaml" />
         <StyleInclude Source="avares://KanjiApp/Styles/Icons.axaml" />
         <StyleInclude Source="avares://KanjiApp/Styles/GridStyles.axaml" />
+        <StyleInclude Source="avares://KanjiApp/Controls/CustomProgressBar.axaml" />
     </Application.Styles>
 </Application>

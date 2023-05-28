@@ -108,7 +108,7 @@ namespace KanjiApp.ViewModels
 
         #endregion
 
-        #region
+        #region Answer
 
         private string _currentOns;
 

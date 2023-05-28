@@ -1,0 +1,28 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:KanjiApp.Controls">
+    <Design.PreviewWith>
+        <StackPanel>
+            <controls:CustomProgressBar Width="300" Height="15" />
+        </StackPanel>
+    </Design.PreviewWith>
+
+    <Style Selector="controls|CustomProgressBar">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid RowDefinitions="*">
+                    <Border Grid.Row="0"
+                            Background="{StaticResource Background}"
+                            CornerRadius="100" />
+
+                    <Border Grid.Row="0"
+                            Background="{StaticResource LightBlue}"
+                            CornerRadius="100"
+                            HorizontalAlignment="Left"
+                            Width="0">
+                    </Border>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>

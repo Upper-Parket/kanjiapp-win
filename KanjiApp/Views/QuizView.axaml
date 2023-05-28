@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:KanjiApp.ViewModels"
              xmlns:converters="clr-namespace:KanjiApp.Converters"
+             xmlns:controls="clr-namespace:KanjiApp.Controls"
              mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="400"
              x:Class="KanjiApp.Views.QuizView">
 
@@ -26,12 +27,11 @@
                 <PathIcon Classes="CloseIcon"
                           Data="{StaticResource CloseIcon}" />
             </Button>
-            <ProgressBar Grid.Column="1"
-                         Maximum="{Binding TotalCount}"
-                         Value="{Binding Index}"
-                         IsIndeterminate="False"
-                         Foreground="{StaticResource LightBlue}">
-            </ProgressBar>
+
+            <controls:CustomProgressBar Grid.Column="1"
+                                        Height="15"
+                                        Maximum="{Binding TotalCount}"
+                                        Value="{Binding Index}" />
         </Grid>
 
         <Grid Grid.Row="1" ColumnDefinitions="Auto,140"
