@@ -22,6 +22,7 @@
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.18" />
         <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.18" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
         <PackageReference Include="XamlNameReferenceGenerator" Version="1.5.1" />
     </ItemGroup>
 
@@ -29,4 +30,20 @@
       <ProjectReference Include="..\PathHelper\PathHelper.csproj" />
       <ProjectReference Include="..\UserSettingsHelper\UserSettingsHelper.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Data\N2.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+       <Content Include="Data\N3.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+       <Content Include="Data\N4.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+       <Content Include="Data\N5.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+      
 </Project>

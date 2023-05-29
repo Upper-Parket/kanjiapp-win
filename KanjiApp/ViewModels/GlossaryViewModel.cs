@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using KanjiApp.Models;
 using KanjiApp.Utils;
 
 namespace KanjiApp.ViewModels
@@ -10,8 +11,8 @@ namespace KanjiApp.ViewModels
         public GlossaryViewModel(INavigator? navigator) : base(navigator)
         {
             Items = new ObservableCollection<KanjiViewModel>();
-            for (var index = 0; index < 50; index++)
-                Items.Add(new KanjiViewModel());
+            foreach (var kanji in KanjiInfo.LoadedKanjis) 
+                Items.Add(new KanjiViewModel(kanji));
         }
 
         public GlossaryViewModel() : this(null)

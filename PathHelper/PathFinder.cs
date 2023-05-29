@@ -8,6 +8,10 @@ namespace KanjiApp.PathHelper.Paths
         private static readonly IPathFinder _pathFinder;
 
         public static string SettingsFile => _pathFinder.SettingsFile;
+        public static string N5SetFile => _pathFinder.N5SetFile;
+        public static string N4SetFile => _pathFinder.N4SetFile;
+        public static string N3SetFile => _pathFinder.N3SetFile;
+        public static string N2SetFile => _pathFinder.N2SetFile;
 
         static PathFinder()
         {

@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using KanjiApp.Enums;
 using KanjiApp.Models;
+using KanjiApp.UserSettingsHelper;
 using KanjiApp.Utils;
 using ReactiveUI;
 
@@ -136,11 +137,13 @@ namespace KanjiApp.ViewModels
 
         #endregion
 
+        private int _guessedCorrectly;
+
         public QuizViewModel(INavigator? navigator) : base(navigator)
         {
             Index = 0;
             Moved = true;
-            _kanjiInfos = KanjiInfo.GetDemoQuiz();
+            _kanjiInfos = KanjiInfo.GetForQuiz(SettingsInstance.UserSettings.KanjisPerPractice);
             State = QuizState.New;
             RightButtonText = "Reveal";
             CircleContent = _kanjiInfos[Index].Kanji;
@@ -173,7 +176,10 @@ namespace KanjiApp.ViewModels
         {
             var result = _kanjiInfos[Index].Kuns.Contains(Input) || _kanjiInfos[Index].Ons.Contains(Input);
             if (result)
+            {
+                _guessedCorrectly += 1;
                 Reveal();
+            }
 
             State = result
                 ? QuizState.GuessedCorrectly
@@ -225,7 +231,7 @@ namespace KanjiApp.ViewModels
             Moved = true;
             Input = string.Empty;
             CheckEnabled = false;
-            CircleContent = "42/69";
+            CircleContent = $"{_guessedCorrectly}/{TotalCount}";
             RightButtonText = "Finish";
         }
 
